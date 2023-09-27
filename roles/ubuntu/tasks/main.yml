@@ -1,8 +1,8 @@
 ---
 - name: download iso to /tmp
   get_url:
-    url: http://releases.ubuntu.com/focal/ubuntu-20.04.1-live-server-amd64.iso
-    checksum: sha256:443511f6bf12402c12503733059269a2e10dec602916c0a75263e5d990f6bb93
+    url: https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso
+    checksum: sha256:b8f31413336b9393ad5d8ef0282717b2ab19f007df2e9ed5196c13d8f9153c8b
     dest: /tmp/
 
 - name: install 7z
@@ -11,7 +11,7 @@
     state: present
 
 - name: extract to nfs export
-  shell: 7z x /tmp/ubuntu-20.04.1-live-server-amd64.iso -o/exports/focal/
+  shell: 7z x /tmp/ubuntu-20.04.6-live-server-amd64.iso -o/exports/focal/
   args:
     creates: /exports/focal/
 
